@@ -23,7 +23,10 @@ export const DisplayWithData = () => {
           setIsLoading(false);
           setWeather(result);
         })
-        .catch((err) => console.log("error is ", err));
+        .catch((err) => {
+          alert(err);
+          setIsLoading(false);
+        });
     };
     fetchData();
     return () => {};
