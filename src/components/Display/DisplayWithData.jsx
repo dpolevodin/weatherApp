@@ -1,10 +1,14 @@
-import { Display } from "./Display";
+import { Display } from "./components/Display/Display";
+import { Loader } from "../common/Loader/Loader";
 import { useState, useEffect } from "react";
+import style from "./DisplayWithData.module.css";
+import { Searchbar } from "./components/Searchbar/Searchbar";
 
 export const DisplayWithData = () => {
   const [weather, setWeather] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const city = "Tyumen";
+  const [city, setCity] = useState("Tyumen");
+
   const url =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     city +
@@ -18,16 +22,24 @@ export const DisplayWithData = () => {
         .then((result) => {
           setIsLoading(false);
           setWeather(result);
-        });
+        })
+        .catch((err) => console.log("error is ", err));
     };
     fetchData();
     return () => {};
-  }, []);
+  }, [url]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const value = event.target.cityName.value;
+    setCity(value);
+  };
 
   return (
-    <>
-      {(isLoading && <div>Загрузка...</div>) ||
-        (weather && <Display {...weather} />)}
-    </>
+    <div className={style._}>
+      <Searchbar onSubmit={handleSubmit} />
+      {(isLoading && <Loader />) ||
+        (weather && city && <Display {...weather} />)}
+    </div>
   );
 };

@@ -3,12 +3,19 @@
   --text-color: #fff;
 }
 
+body {
+  margin: 0;
+}
+
 ._ {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: var(--main-background-color);
   color: var(--text-color);
+  background: url(../../../data/image/forest.jpg) no-repeat;
+  background-size: 100% contain;
+  box-sizing: border-box;
 }

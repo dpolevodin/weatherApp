@@ -1,0 +1,19 @@
+:root {
+  --display-background-color: rgba(130, 223, 210, 0.4);
+}
+._ {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 2rem;
+  background: rgb(0, 31, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 31, 36, 0.9) 0%,
+    rgba(9, 121, 116, 0.6) 52%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
+  font-family: "Inter", sans-serif;
+}

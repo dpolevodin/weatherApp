@@ -1,0 +1,33 @@
+._ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  margin-bottom: -1rem;
+}
+
+.imageWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-size: 2.5rem;
+  font-family: "Amatic SC", cursive;
+}
+
+.listElement {
+  margin-bottom: 0.5rem;
+}
+
+.listElement:last-child {
+  margin: 0;
+}
