@@ -2,7 +2,8 @@ import style from "./Display.module.css";
 
 const timeParse = (date) => {
   let parseDate = new Date(date * 1000);
-  return `${parseDate.getHours()}:${parseDate.getMinutes()}:${parseDate.getSeconds()}`;
+  const time = `${parseDate.getHours()}:${parseDate.getMinutes()}:${parseDate.getSeconds()}`;
+  return time;
 };
 
 const temperatureToCelsium = (temp) => {
