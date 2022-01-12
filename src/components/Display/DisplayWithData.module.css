@@ -13,8 +13,8 @@
   background: linear-gradient(
     0deg,
     rgba(0, 31, 36, 0.9) 0%,
-    rgba(9, 121, 116, 0.6) 52%,
-    rgba(255, 255, 255, 0.15) 100%
+    rgba(9, 121, 116, 0.7) 52%,
+    rgba(255, 255, 255, 0.2) 100%
   );
   font-family: "Inter", sans-serif;
 }
@@ -28,9 +28,120 @@
 }
 
 .Clear {
-  background-color: rgba(255, 255, 0, 0.425);
+  background-color: rgba(241, 227, 94, 0.5);
 }
 
 .Clouds {
-  background-color: rgba(0, 255, 242, 0.637);
+  background-color: rgba(144, 211, 208, 0.75);
+  background: url(../../data/image/clouds.png) no-repeat;
+  animation: clouds 7s linear infinite;
+}
+
+@keyframes clouds {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+.Snow {
+  background-color: rgba(255, 255, 255, 0.7);
+  background: url(../../data/image/snow.png) no-repeat;
+  background-size: 100%;
+  animation: snow 7s linear infinite;
+}
+
+@keyframes snow {
+  from {
+    background-position: 0 -300px;
+  }
+  to {
+    background-position: 20% 0px;
+  }
+}
+
+.Drizzle {
+  background-color: rgba(27, 42, 75, 0.25);
+}
+
+.Rain {
+  background-color: rgba(27, 42, 75, 0.8);
+  background: url(../../data/image/rain2.png) no-repeat;
+  background-size: 100%;
+  animation: rain 0.25s linear infinite;
+}
+
+@keyframes rain {
+  from {
+    background-position: 0 -300px;
+  }
+  to {
+    background-position: 20% 0px;
+  }
+}
+
+.Thunderstorm {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.Tornado {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.Squall {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.Mist {
+  background-color: rgba(255, 255, 255, 0.6);
+  background: url(../../data/image/fog.png) no-repeat;
+  animation: fog 20s linear infinite;
+  background-size: 200%;
+}
+
+@keyframes mist {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 20% 20%;
+  }
+}
+
+.Smoke {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.Haze {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Dust {
+  background-color: rgba(126, 106, 20, 0.5);
+}
+
+.Sand {
+  background-color: rgba(126, 106, 20, 0.5);
+}
+
+.Fog {
+  background-color: rgba(255, 255, 255, 0.6);
+  background: url(../../data/image/fog.png) no-repeat;
+  background-size: 100%;
+  animation: fog 0.25s linear infinite;
+}
+
+@keyframes fog {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+.Ash {
+  background-color: rgba(119, 119, 119, 0.6);
 }

@@ -9,9 +9,7 @@ export const DisplayWithData = () => {
   const [weather, setWeather] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [city, setCity] = useState("Tyumen");
-
-  // const currentWeather = "Clear";
-  const currentWeather = !!weather ? weather.weather[0].main : "Clouds";
+  const [currentWeather, setCurrentWeather] = useState("Clear");
 
   const weatherStyle = cc([style.weatherBackground, style[currentWeather]]);
 
@@ -28,9 +26,12 @@ export const DisplayWithData = () => {
         .then((result) => {
           setIsLoading(false);
           setWeather(result);
+          if (result.hasOwnProperty("weather")) {
+            setCurrentWeather(result.weather[0].main);
+          }
         })
-        .catch((err) => {
-          alert(err);
+        .catch((error) => {
+          console.error(error);
           setIsLoading(false);
         });
     };
@@ -44,7 +45,6 @@ export const DisplayWithData = () => {
     setCity(value);
   };
 
-  console.log(weather);
   return (
     <div className={weatherStyle}>
       <div className={style._}>

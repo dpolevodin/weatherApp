@@ -15,7 +15,8 @@ body {
   width: 100vw;
   height: 100vh;
   color: var(--text-color);
-  background: url(../../../data/image/forest.jpg) no-repeat;
-  background-size: 100% contain;
+  background: url(../../../data/image/village.png) no-repeat;
+  background-size: 100%;
+  background-color: rgba(0, 0, 0, 0.623);
   box-sizing: border-box;
 }
