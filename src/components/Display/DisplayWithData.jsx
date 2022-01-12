@@ -3,11 +3,17 @@ import { Loader } from "../common/Loader/Loader";
 import { useState, useEffect } from "react";
 import style from "./DisplayWithData.module.css";
 import { Searchbar } from "./components/Searchbar/Searchbar";
+import cc from "classcat";
 
 export const DisplayWithData = () => {
   const [weather, setWeather] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [city, setCity] = useState("Tyumen");
+
+  // const currentWeather = "Clear";
+  const currentWeather = "Clouds";
+
+  const weatherStyle = cc([style.weatherBackground, style[currentWeather]]);
 
   const url =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -38,11 +44,14 @@ export const DisplayWithData = () => {
     setCity(value);
   };
 
+  console.log(weather);
   return (
-    <div className={style._}>
-      <Searchbar onSubmit={handleSubmit} />
-      {(isLoading && <Loader />) ||
-        (weather && city && <Display {...weather} />)}
+    <div className={weatherStyle}>
+      <div className={style._}>
+        <Searchbar onSubmit={handleSubmit} />
+        {(isLoading && <Loader />) ||
+          (weather && city && <Display {...weather} />)}
+      </div>
     </div>
   );
 };
