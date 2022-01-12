@@ -11,7 +11,7 @@ export const DisplayWithData = () => {
   const [city, setCity] = useState("Tyumen");
 
   // const currentWeather = "Clear";
-  const currentWeather = "Clouds";
+  const currentWeather = !!weather ? weather.weather[0].main : "Clouds";
 
   const weatherStyle = cc([style.weatherBackground, style[currentWeather]]);
 
