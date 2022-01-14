@@ -1,9 +1,9 @@
 import { Display } from "./components/Display/Display";
-import { Loader } from "../common/Loader/Loader";
 import { useState, useEffect } from "react";
 import style from "./DisplayWithData.module.css";
 import { Searchbar } from "./components/Searchbar/Searchbar";
 import cc from "classcat";
+import { Loader } from "../common/Loader/Loader";
 
 export const DisplayWithData = () => {
   const [weather, setWeather] = useState(null);
@@ -31,7 +31,6 @@ export const DisplayWithData = () => {
           }
         })
         .catch((error) => {
-          console.error(error);
           setIsLoading(false);
         });
     };

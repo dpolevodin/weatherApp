@@ -1,14 +1,5 @@
 import style from "./Display.module.css";
-
-const timeParse = (date) => {
-  let parseDate = new Date(date * 1000);
-  const time = `${parseDate.getHours()}:${parseDate.getMinutes()}:${parseDate.getSeconds()}`;
-  return time;
-};
-
-const temperatureToCelsium = (temp) => {
-  return Math.round(temp - 273.15);
-};
+import { timeParse, tempToCelsium } from "../../../../utils/heplersFunction";
 
 export const Display = ({ weather, name, wind, sys, main }) => {
   const iconUrl =
@@ -36,10 +27,10 @@ export const Display = ({ weather, name, wind, sys, main }) => {
             Закат: {timeParse(sys.sunset)}
           </div>
           <div className={style.listElement}>
-            Температура воздуха: {temperatureToCelsium(main.temp)} °C
+            Температура воздуха: {tempToCelsium(main.temp)} °C
           </div>
           <div className={style.listElement}>
-            Ощущается как: {temperatureToCelsium(main.feels_like)} °C
+            Ощущается как: {tempToCelsium(main.feels_like)} °C
           </div>
           <div className={style.listElement}>
             Влажность воздуха: {main.humidity} %

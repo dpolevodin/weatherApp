@@ -1,0 +1,18 @@
+._ {
+  display: flex;
+  stroke: #fff;
+  width: 1.5rem;
+  margin-right: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
