@@ -1,0 +1,13 @@
+._ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.text {
+  font-family: "Amatic SC", cursive;
+  font-size: 1.25rem;
+  margin-right: 0.5rem;
+}

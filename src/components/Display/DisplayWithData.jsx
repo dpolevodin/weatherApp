@@ -4,6 +4,7 @@ import style from "./DisplayWithData.module.css";
 import { Searchbar } from "./components/Searchbar/Searchbar";
 import cc from "classcat";
 import { Loader } from "../common/Loader/Loader";
+import { AddToFavorite } from "./components/AddToFavorite/AddToFavorite";
 
 export const DisplayWithData = () => {
   const [weather, setWeather] = useState(null);
@@ -50,6 +51,7 @@ export const DisplayWithData = () => {
         <Searchbar onSubmit={handleSubmit} />
         {(isLoading && <Loader />) ||
           (weather && city && <Display {...weather} />)}
+        <AddToFavorite />
       </div>
     </div>
   );

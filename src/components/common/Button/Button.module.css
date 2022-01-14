@@ -1,0 +1,21 @@
+._ {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  width: 100%;
+  padding: 0;
+  color: #fff;
+  background-color: transparent;
+  border: 0.125rem solid #fff;
+  font-size: 1.25rem;
+}
+
+.round {
+  width: 2rem;
+  border-radius: 50%;
+}
+
+.round:active {
+  background-color: hsla(0, 0%, 100%, 0.2);
+}
