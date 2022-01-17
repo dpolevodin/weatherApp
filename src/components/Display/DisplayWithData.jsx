@@ -53,9 +53,20 @@ export const DisplayWithData = () => {
     setFavoriteList(result);
   };
 
+  const handleClickDeleteFromFavorite = (event) => {
+    event.preventDefault();
+    const city = event.currentTarget.name;
+    setFavoriteList(favoriteList.filter((item) => item.name !== city));
+  };
+
   return (
     <div className={weatherStyle}>
-      {favoriteList.length > 0 && <FavoriteList favoritesList={favoriteList} />}
+      {favoriteList.length > 0 && (
+        <FavoriteList
+          favoritesList={favoriteList}
+          onClick={handleClickDeleteFromFavorite}
+        />
+      )}
       <div className={style._}>
         <Searchbar onSubmit={handleSubmit} />
         {(isLoading && <Loader />) ||

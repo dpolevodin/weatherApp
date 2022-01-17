@@ -2,9 +2,9 @@ import style from "./FavoriteItem.module.css";
 import { Button } from "../../../common/Button/Button";
 import { DeletIcon } from "../Icon/DeletIcon";
 
-export const FavoriteItem = ({ title, src, weatherCount }) => {
+export const FavoriteItem = ({ title, src, weatherCount, onClick }) => {
   return (
-    <div className={style._}>
+    <div className={style._} name={title}>
       <div className={style.title}>{title}</div>
       <img
         className={style.image}
@@ -13,7 +13,7 @@ export const FavoriteItem = ({ title, src, weatherCount }) => {
       />
 
       <div className={style.weatherCount}>{weatherCount} °C</div>
-      <Button type={"delete"}>
+      <Button type={"delete"} onClick={onClick} name={title}>
         <DeletIcon />
       </Button>
     </div>
