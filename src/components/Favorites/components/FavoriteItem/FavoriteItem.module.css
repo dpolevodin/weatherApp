@@ -1,0 +1,30 @@
+._ {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10rem;
+  min-height: 10rem;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: rgb(48, 48, 48);
+  font-family: "Amatic SC", cursive;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: -0.5rem;
+}
+
+.image {
+  width: 5rem;
+  margin-bottom: -1rem;
+}
+
+.weatherCount {
+  font-size: 3rem;
+  font-weight: bold;
+}

@@ -4,7 +4,7 @@ import style from "./AddToFavorite.module.css";
 export const AddToFavorite = () => {
   return (
     <div className={style._}>
-      <span className={style.text}>Добавить в избранное</span>
+      <span className={style.text}>ДОБАВИТЬ В ИЗБРАННОЕ</span>
       <Button type={"round"}>+</Button>
     </div>
   );

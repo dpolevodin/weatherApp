@@ -19,3 +19,16 @@
 .round:active {
   background-color: hsla(0, 0%, 100%, 0.2);
 }
+
+.delete {
+  position: absolute;
+  right: 0.25rem;
+  top: 0.25rem;
+  width: 2rem;
+  border: none;
+  border-radius: 0.75rem;
+}
+
+.delete:active {
+  background-color: hsla(0, 0%, 100%, 0.2);
+}
