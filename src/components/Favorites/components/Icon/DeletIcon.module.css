@@ -1,0 +1,10 @@
+._ {
+  display: none;
+  width: 1.25rem;
+  stroke: rgba(0, 0, 0, 0.6);
+  fill: none;
+}
+
+._:hover {
+  stroke: black;
+}

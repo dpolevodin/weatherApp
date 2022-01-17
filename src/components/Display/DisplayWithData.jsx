@@ -12,6 +12,7 @@ export const DisplayWithData = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [city, setCity] = useState("Tyumen");
   const [currentWeather, setCurrentWeather] = useState("Clear");
+  const [favoriteList, setFavoriteList] = useState([]);
 
   const weatherStyle = cc([style.weatherBackground, style[currentWeather]]);
 
@@ -46,14 +47,20 @@ export const DisplayWithData = () => {
     setCity(value);
   };
 
+  const handleClickAddToFavorite = (event) => {
+    event.preventDefault();
+    const result = [...new Set([weather, ...favoriteList])];
+    setFavoriteList(result);
+  };
+
   return (
     <div className={weatherStyle}>
-      <FavoriteList />
+      {favoriteList.length > 0 && <FavoriteList favoritesList={favoriteList} />}
       <div className={style._}>
         <Searchbar onSubmit={handleSubmit} />
         {(isLoading && <Loader />) ||
           (weather && city && <Display {...weather} />)}
-        <AddToFavorite />
+        <AddToFavorite onClick={handleClickAddToFavorite} />
       </div>
     </div>
   );
