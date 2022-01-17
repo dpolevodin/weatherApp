@@ -1,4 +1,4 @@
-import { FavoriteItem } from "./components/FavoriteItem/FavoriteItem";
+import { FavoriteItem } from "../favorites/components/FavoriteItem/FavoriteItem";
 import style from "./FavoriteList.module.css";
 import { tempToCelsium } from "../../utils/heplersFunction";
 

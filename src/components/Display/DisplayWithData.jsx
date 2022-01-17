@@ -5,7 +5,7 @@ import { Searchbar } from "./components/Searchbar/Searchbar";
 import cc from "classcat";
 import { Loader } from "../common/Loader/Loader";
 import { AddToFavorite } from "./components/AddToFavorite/AddToFavorite";
-import { FavoriteList } from "../Favorites/FavoriteList";
+import { FavoriteList } from "../favorites/FavoriteList";
 
 export const DisplayWithData = () => {
   const [weather, setWeather] = useState(null);
