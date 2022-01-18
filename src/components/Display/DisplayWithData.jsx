@@ -6,6 +6,8 @@ import cc from "classcat";
 import { Loader } from "../common/Loader/Loader";
 import { AddToFavorite } from "./components/AddToFavorite/AddToFavorite";
 import { FavoriteList } from "../favorites/FavoriteList";
+import { Forecast } from "./components/Forecast/Forecast";
+import { Button } from "../common/Button/Button";
 
 export const DisplayWithData = () => {
   const [weather, setWeather] = useState(null);
@@ -13,6 +15,7 @@ export const DisplayWithData = () => {
   const [city, setCity] = useState("Tyumen");
   const [currentWeather, setCurrentWeather] = useState("Clear");
   const [favoriteList, setFavoriteList] = useState([]);
+  const [isForecastVisible, setIsForecastVisible] = useState(false);
 
   const weatherStyle = cc([style.weatherBackground, style[currentWeather]]);
 
@@ -22,6 +25,7 @@ export const DisplayWithData = () => {
     "&appid=92070bdae24e4441042ca6528d8170a2&lang=ru";
 
   useEffect(() => {
+    setCurrentWeather(null);
     setIsLoading(true);
     const fetchData = async () => {
       await fetch(url)
@@ -59,6 +63,11 @@ export const DisplayWithData = () => {
     setFavoriteList(favoriteList.filter((item) => item.name !== city));
   };
 
+  const handleClickForecastVisible = (event) => {
+    event.preventDefault();
+    setIsForecastVisible(!isForecastVisible);
+  };
+
   return (
     <div className={weatherStyle}>
       {favoriteList.length > 0 && (
@@ -71,8 +80,21 @@ export const DisplayWithData = () => {
         <Searchbar onSubmit={handleSubmit} />
         {(isLoading && <Loader />) ||
           (weather && city && <Display {...weather} />)}
-        <AddToFavorite onClick={handleClickAddToFavorite} />
+
+        {currentWeather && (
+          <div className={style.buttonsBlock}>
+            <Button type={"primary"} onClick={handleClickForecastVisible}>
+              {isForecastVisible
+                ? "Скрыть прогноз на 5 дней"
+                : "Показать прогноз на 5 дней"}
+            </Button>
+
+            <AddToFavorite onClick={handleClickAddToFavorite} />
+          </div>
+        )}
       </div>
+
+      {isForecastVisible && <Forecast city={city} />}
     </div>
   );
 };

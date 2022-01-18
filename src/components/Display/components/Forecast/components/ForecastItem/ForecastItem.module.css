@@ -1,0 +1,33 @@
+._ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  margin: 0 0.25rem 0.25rem 0;
+  width: 4rem;
+  border-radius: 0.25rem;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 31, 36, 0.95) 0%,
+    rgba(9, 121, 116, 0.95) 52%,
+    rgba(2, 50, 58, 0.7) 100%
+  );
+  color: #fff;
+}
+
+._:hover {
+  box-shadow: 0 0 0.5rem #fff;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.image {
+  margin-bottom: -0.75rem;
+}
+
+.time {
+  margin-bottom: 0.5rem;
+}

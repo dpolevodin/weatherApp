@@ -19,6 +19,13 @@
   font-family: "Inter", sans-serif;
 }
 
+.buttonsBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .weatherBackground {
   display: flex;
   align-items: center;

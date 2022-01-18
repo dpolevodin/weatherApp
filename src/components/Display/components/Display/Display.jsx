@@ -1,12 +1,10 @@
 import style from "./Display.module.css";
 import { timeParse, tempToCelsium } from "../../../../utils/heplersFunction";
+import { getImage } from "../../../../utils/heplersFunction";
 
 export const Display = ({ weather, name, wind, sys, main }) => {
   const iconUrl =
-    weather !== undefined
-      ? "http://openweathermap.org/img/w/" + weather[0].icon + ".png"
-      : "http://openweathermap.org/img/w/01n.png";
-
+    weather !== undefined ? getImage(weather[0].icon) : getImage("01n");
   return (
     <div className={style._}>
       {(weather && (
