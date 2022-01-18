@@ -10,6 +10,10 @@
   font-size: 1.25rem;
 }
 
+._:hover {
+  box-shadow: 0 0 0.5rem #fff;
+}
+
 .primary {
   margin-bottom: 1rem;
   padding: 1rem 0.75rem;
@@ -18,10 +22,6 @@
   border: 0.0125rem solid #fff;
   border-radius: 0.25rem;
   background-color: transparent;
-}
-
-.primary:hover {
-  box-shadow: 0 0 0.5rem #fff;
 }
 
 .primary:active {
